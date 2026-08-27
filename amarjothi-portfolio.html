@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. AmarJothi — Senior QA Lead, Enterprise Storage</title>
+<meta name="description" content="M. AmarJothi — Senior QA Lead | Enterprise Storage | Platform Validation | Virtualization. 15+ years validating SAN/NAS, Virtualization, HCI and Kubernetes storage systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0D10;
+    --bg-alt:#0E1013;
+    --surface:#14171B;
+    --surface-2:#1A1E23;
+    --border:#262B31;
+    --border-soft:#1D2126;
+    --text:#EDF1F3;
+    --text-muted:#8D98A3;
+    --text-dim:#57626C;
+    --amber:#2DD4BF;
+    --amber-dim:#123330;
+    --blue:#818CF8;
+    --ok:#22C55E;
+    --sans:'Inter', -apple-system, sans-serif;
+    --display:'Space Grotesk', 'Inter', sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --maxw:1160px;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation-duration:.01ms !important; transition-duration:.01ms !important;}}
+  body{background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.65; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--amber-dim); color:var(--amber);}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--display); font-weight:700; letter-spacing:-0.01em; color:var(--text);}
+  .mono{font-family:var(--mono);}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); margin-bottom:12px; display:flex; align-items:center; gap:8px;}
+  .section-tag{font-family:var(--mono); font-size:12.5px; color:var(--text-dim); letter-spacing:.08em;}
+  .section-title{font-size:clamp(26px,3.2vw,36px); margin-top:8px;}
+  .section-head{margin-bottom:48px; max-width:640px;}
+  .section-head p{color:var(--text-muted); margin-top:14px; font-size:15.5px;}
+  section{padding:100px 0; border-bottom:1px solid var(--border-soft);}
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  /* NAV */
+  header{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(11,13,16,.82); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-soft);}
+  nav{max-width:var(--maxw); margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:700; font-size:16px;}
+  .brand .mark{width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,var(--amber),#0f9c8c); display:flex; align-items:center; justify-content:center; color:#052623; font-family:var(--mono); font-weight:700; font-size:13px;}
+  .navlinks{display:flex; gap:4px; font-size:14px;}
+  .navlinks a{color:var(--text-muted); padding:9px 14px; border-radius:7px; transition:.2s;}
+  .navlinks a:hover,.navlinks a.active{color:var(--text); background:var(--surface);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .icon-link{width:36px; height:36px; border:1px solid var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--text-muted); transition:.2s;}
+  .icon-link:hover{color:var(--amber); border-color:var(--amber);}
+  .menu-btn{display:none; background:none; border:1px solid var(--border); color:var(--text); width:38px; height:38px; border-radius:8px; cursor:pointer;}
+
+  /* BUTTONS */
+  .btn{font-family:var(--sans); font-weight:600; font-size:14px; padding:13px 22px; border-radius:9px; border:1px solid var(--border); cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:.2s;}
+  .btn-primary{background:var(--amber); color:#052623; border-color:var(--amber);}
+  .btn-primary:hover{background:#52e6d2; box-shadow:0 8px 24px -8px rgba(45,212,191,.5);}
+  .btn-ghost{background:transparent; color:var(--text);}
+  .btn-ghost:hover{border-color:var(--text-muted);}
+
+  /* HERO */
+  .hero{padding:170px 0 100px; display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center;}
+  @media (max-width:880px){.hero{grid-template-columns:1fr; padding-top:130px;}}
+  .status-pill{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ok); border:1px solid #123821; background:rgba(34,197,94,.06); padding:6px 12px; border-radius:20px; margin-bottom:22px;}
+  .status-pill .dot{width:7px; height:7px; border-radius:50%; background:var(--ok); box-shadow:0 0 8px var(--ok);}
+  .hero h1{font-size:clamp(38px,5.4vw,58px); line-height:1.06;}
+  .hero h1 .accent{color:var(--amber);}
+  .hero .role{font-family:var(--mono); font-size:15px; color:var(--blue); margin-top:16px;}
+  .hero p.lead{color:var(--text-muted); margin-top:18px; max-width:520px; font-size:16px;}
+  .hero-cta{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+
+  .avatar-card{background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:28px; position:relative;}
+  .avatar-badge{width:100%; aspect-ratio:1/1; border-radius:16px; background:radial-gradient(circle at 30% 20%, #1c2733, #0d1319 70%); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;}
+  .avatar-badge svg{width:70%; height:70%;}
+  .avatar-badge::after{content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg, transparent, transparent 22px, rgba(255,255,255,.02) 23px);}
+  .avatar-stats{display:flex; justify-content:space-between; margin-top:20px; font-family:var(--mono);}
+  .avatar-stats div{text-align:center;}
+  .avatar-stats .n{font-size:20px; font-weight:700; color:var(--amber);}
+  .avatar-stats .l{font-size:10.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:.06em; margin-top:3px;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:.7fr 1.3fr; gap:56px; align-items:start;}
+  @media (max-width:880px){.about-grid{grid-template-columns:1fr;}}
+  .about-photo{background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px;}
+  .about-photo .frame{aspect-ratio:4/5; border-radius:12px; background:radial-gradient(circle at 35% 25%,#202c39,#0c1218 75%); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;}
+  .about-photo .frame svg{width:56%;}
+  .about-photo .frame img{width:100%; height:100%; object-fit:cover; border-radius:12px; filter:brightness(.92) contrast(1.08) saturate(.9);}
+  .about-photo .frame::after{content:''; position:absolute; inset:0; border-radius:12px; pointer-events:none;
+    box-shadow:
+      inset 0 -50px 70px -15px rgba(11,13,16,.9),
+      inset 0 50px 70px -15px rgba(11,13,16,.65),
+      inset 45px 0 70px -20px rgba(11,13,16,.55),
+      inset -45px 0 70px -20px rgba(11,13,16,.55),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+  .about-photo .caption{font-family:var(--mono); font-size:11.5px; color:var(--text-dim); text-align:center; margin-top:14px; letter-spacing:.04em;}
+  .about-text p{color:var(--text-muted); margin-bottom:16px; font-size:15.5px;}
+  .about-text strong{color:var(--text); font-weight:600;}
+  .strength-tags{display:flex; flex-wrap:wrap; gap:9px; margin-top:22px;}
+  .tag{font-family:var(--mono); font-size:12px; padding:7px 13px; border:1px solid var(--border); border-radius:20px; color:var(--text-muted);}
+
+  /* SERVICES */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:880px){.services-grid{grid-template-columns:1fr;}}
+  .service-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:30px; transition:.25s;}
+  .service-card:hover{border-color:var(--amber); transform:translateY(-3px);}
+  .service-card .num{font-family:var(--mono); color:var(--text-dim); font-size:12.5px;}
+  .service-card h3{font-size:19px; margin:14px 0 12px;}
+  .service-card p{color:var(--text-muted); font-size:14.5px; margin-bottom:16px;}
+  .service-card ul{list-style:none; font-family:var(--mono); font-size:12.5px; color:var(--text-dim);}
+  .service-card li{padding:4px 0;}
+  .service-card li::before{content:'— '; color:var(--amber);}
+
+  /* STACK */
+  .stack-cats{display:flex; flex-direction:column; gap:26px;}
+  .stack-cat h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px;}
+  .stack-icons{display:flex; flex-wrap:wrap; gap:10px;}
+  .stack-icon{display:flex; align-items:center; gap:9px; background:var(--surface); border:1px solid var(--border); padding:9px 14px; border-radius:9px; font-size:13.5px; color:var(--text-muted);}
+  .stack-icon img{width:17px; height:17px; filter:grayscale(1) brightness(1.5); opacity:.85;}
+  .stack-icon .letter{width:17px; height:17px; border-radius:4px; background:var(--surface-2); color:var(--text-dim); font-family:var(--mono); font-size:9px; display:flex; align-items:center; justify-content:center; font-weight:600;}
+  .stack-icon:hover img{filter:none; opacity:1;}
+
+  /* WORK / PROJECTS */
+  .work-group-title{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin:0 0 16px; padding-top:8px; display:flex; align-items:center; gap:10px;}
+  .work-group-title:not(:first-of-type){margin-top:8px;}
+  .work-group-title::after{content:''; flex:1; height:1px; background:var(--border-soft);}
+  .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:36px;}
+  .work-grid:last-of-type{margin-bottom:0;}
+  @media (max-width:880px){.work-grid{grid-template-columns:1fr;}}
+  .work-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px; cursor:pointer; transition:.25s;}
+  .work-card:hover{border-color:var(--amber);}
+  .work-card .num{font-family:var(--mono); color:var(--amber); font-size:13px;}
+  .work-card h3{font-size:19px; margin:12px 0 8px;}
+  .work-card .meta{font-family:var(--mono); font-size:11.5px; color:var(--text-dim); margin-bottom:14px;}
+  .work-tags{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px;}
+  .work-tags span{font-family:var(--mono); font-size:11px; background:var(--surface-2); border:1px solid var(--border-soft); color:var(--text-dim); padding:4px 9px; border-radius:5px;}
+  .work-detail{max-height:0; overflow:hidden; transition:max-height .4s ease;}
+  .work-card.open .work-detail{max-height:400px; margin-top:10px;}
+  .work-detail ul{list-style:none;}
+  .work-detail li{position:relative; padding-left:18px; color:var(--text-muted); font-size:13.5px; margin-bottom:8px;}
+  .work-detail li::before{content:'✓'; position:absolute; left:0; color:var(--ok); font-family:var(--mono); font-size:11px; top:2px;}
+  .work-toggle{font-family:var(--mono); font-size:12px; color:var(--blue);}
+
+  /* CREDENTIALS: education + awards */
+  .cred-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media (max-width:880px){.cred-grid{grid-template-columns:1fr;}}
+  .cred-col h4{font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--amber); margin-bottom:20px;}
+  .cred-entry{display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--border-soft);}
+  .cred-entry:last-child{border-bottom:none;}
+  .cred-icon{width:38px; height:38px; border-radius:9px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;}
+  .cred-entry h5{font-size:15px; font-weight:600;}
+  .cred-entry .sub{font-family:var(--mono); font-size:12px; color:var(--text-dim); margin-top:3px;}
+  .cred-entry p{color:var(--text-muted); font-size:13.5px; margin-top:6px;}
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:50px;}
+  @media (max-width:880px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info h3{font-size:24px; margin-bottom:14px;}
+  .contact-info p{color:var(--text-muted); font-size:15px; margin-bottom:26px;}
+  .contact-list{display:flex; flex-direction:column; gap:14px;}
+  .contact-list a{display:flex; align-items:center; gap:12px; font-family:var(--mono); font-size:13.5px; color:var(--text-muted); transition:.2s;}
+  .contact-list a:hover{color:var(--amber);}
+  .contact-list .ic{width:34px; height:34px; border:1px solid var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  form.contact-form{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:30px; display:flex; flex-direction:column; gap:16px;}
+  .form-row{display:flex; flex-direction:column; gap:8px;}
+  .form-row label{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim);}
+  .form-row input, .form-row textarea{background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; padding:12px 14px; color:var(--text); font-family:var(--sans); font-size:14px;}
+  .form-row textarea{resize:vertical; min-height:110px;}
+  .form-row input:focus, .form-row textarea:focus{outline:none; border-color:var(--amber);}
+  .form-note{font-family:var(--mono); font-size:11px; color:var(--text-dim);}
+
+  footer{padding:40px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-dim);}
+  footer .fsocials{display:flex; justify-content:center; gap:16px; margin-top:14px;}
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .menu-btn{display:block;}
+    section{padding:76px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><span class="mark">MA</span>Amar Jothi</div>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#stack">Stack</a>
+      <a href="#work">Work</a>
+      <a href="#credentials">Recognition</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="icon-link" href="https://linkedin.com/in/amarjothi-m-47a880146" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a class="icon-link" href="https://github.com/amarjothim" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.07.78 2.15 0 1.56-.01 2.81-.01 3.19 0 .31.21.67.8.56A10.99 10.99 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="AmarJothi_Resume.pdf" download style="padding:9px 16px; font-size:13px;">Resume ↓</a>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero wrap">
+  <div class="reveal in">
+    <div class="status-pill"><span class="dot"></span>Open to QA Leadership Roles</div>
+    <h1>M. AmarJothi</h1>
+    <div class="role mono">Senior QA Lead | Enterprise Storage | Platform Validation | Virtualization</div>
+    <p class="lead">Senior QA Lead with 15+ years of experience in Enterprise Storage, Virtualization, and Kubernetes platforms, specializing in SAN/NAS validation, firmware qualification, release validation, and end-to-end quality engineering. Proven expertise in leading test strategy, functional, regression, performance, and stability testing while driving defect resolution and cross-functional collaboration.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View Projects →</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="avatar-card reveal in">
+    <div class="avatar-badge">
+      <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- rack frame -->
+        <rect x="34" y="14" width="132" height="178" rx="6" fill="#0D1319" stroke="#262B31" stroke-width="1.5"/>
+        <circle cx="42" cy="22" r="1.6" fill="#2E3E4C"/>
+        <circle cx="158" cy="22" r="1.6" fill="#2E3E4C"/>
+        <circle cx="42" cy="184" r="1.6" fill="#2E3E4C"/>
+        <circle cx="158" cy="184" r="1.6" fill="#2E3E4C"/>
+
+        <!-- rack units, each a storage chassis with drive bays -->
+        <g>
+          <rect x="44" y="24" width="112" height="22" rx="3" fill="#1A1E23" stroke="#262B31"/>
+          <rect x="50" y="29" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="63" y="29" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="76" y="29" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="89" y="29" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <circle cx="146" cy="35" r="3" fill="#22C55E"><animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite"/></circle>
+          <circle cx="136" cy="35" r="3" fill="#818CF8"/>
+        </g>
+        <g>
+          <rect x="44" y="52" width="112" height="22" rx="3" fill="#1A1E23" stroke="#262B31"/>
+          <rect x="50" y="57" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="63" y="57" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="76" y="57" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="89" y="57" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <circle cx="146" cy="63" r="3" fill="#2DD4BF"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
+          <circle cx="136" cy="63" r="3" fill="#818CF8"/>
+        </g>
+        <g>
+          <rect x="44" y="80" width="112" height="22" rx="3" fill="#1A1E23" stroke="#262B31"/>
+          <rect x="50" y="85" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="63" y="85" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="76" y="85" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="89" y="85" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <circle cx="146" cy="91" r="3" fill="#22C55E"><animate attributeName="opacity" values="1;0.35;1" dur="2.6s" repeatCount="indefinite"/></circle>
+          <circle cx="136" cy="91" r="3" fill="#818CF8"/>
+        </g>
+        <g>
+          <rect x="44" y="108" width="112" height="22" rx="3" fill="#1A1E23" stroke="#262B31"/>
+          <rect x="50" y="113" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="63" y="113" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="76" y="113" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <rect x="89" y="113" width="10" height="12" rx="1.5" fill="#0D1319" stroke="#2E3E4C"/>
+          <circle cx="146" cy="119" r="3" fill="#22C55E"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="136" cy="119" r="3" fill="#818CF8"/>
+        </g>
+
+        <!-- network / PDU unit -->
+        <rect x="44" y="136" width="112" height="14" rx="3" fill="#141B23" stroke="#262B31"/>
+        <circle cx="52" cy="143" r="2" fill="#818CF8"/>
+        <circle cx="60" cy="143" r="2" fill="#818CF8"/>
+        <circle cx="68" cy="143" r="2" fill="#57626C"/>
+        <circle cx="76" cy="143" r="2" fill="#818CF8"/>
+
+        <!-- base vents -->
+        <rect x="44" y="158" width="112" height="26" rx="3" fill="#0F161D" stroke="#262B31"/>
+        <line x1="52" y1="164" x2="148" y2="164" stroke="#262B31" stroke-width="1.5"/>
+        <line x1="52" y1="170" x2="148" y2="170" stroke="#262B31" stroke-width="1.5"/>
+        <line x1="52" y1="176" x2="148" y2="176" stroke="#262B31" stroke-width="1.5"/>
+
+        <text x="100" y="205" text-anchor="middle" fill="#57626C" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5">STORAGE ARRAY · ACTIVE</text>
+      </svg>
+    </div>
+    <div class="avatar-stats">
+      <div><div class="n">15+</div><div class="l">Years</div></div>
+      <div><div class="n">8</div><div class="l">Flagship Projects</div></div>
+      <div><div class="n">6</div><div class="l">Awards</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="wrap reveal">
+  <div class="section-head">
+    <div class="section-tag">01 · ABOUT</div>
+    <h2 class="section-title">Who I Am</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-photo">
+      <div class="frame">
+        <img src="AmarJothiPhoto.png" alt="M. AmarJothi">
+      </div>
+      <div class="caption">M. AMARJOTHI — CHENNAI, TAMIL NADU, INDIA</div>
+    </div>
+    <div class="about-text">
+      <p><strong>Enterprise Storage QA Lead</strong> with 15+ years across SAN/NAS, Virtualization, Hyper-Converged Storage, and Kubernetes. I lead full-cycle STLC ownership — firmware validation, performance testing, and automation triage — for products used by HPE, Portworx, and Pivot3 clients.</p>
+      <p>At <strong>Aziro Technologies</strong>, I lead and mentor a QA team validating enterprise storage operating systems end-to-end, certifying software-defined storage against Kubernetes platforms like Anthos, and owning root-cause analysis on customer escalations for flagship clients.</p>
+      <p>Passionate about continuous learning and actively exploring <strong>Python, Playwright, LangChain, RAG, AI Agents, and Agentic AI</strong> through practical projects to build AI-driven quality engineering and intelligent automation capabilities.</p>
+      <div class="strength-tags">
+        <span class="tag">Technical Leadership</span>
+        <span class="tag">Root Cause Analysis</span>
+        <span class="tag">Analytical Problem Solving</span>
+        <span class="tag">Ownership &amp; Accountability</span>
+        <span class="tag">Adaptability to Emerging Tech</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="wrap reveal">
+  <div class="section-head">
+    <div class="section-tag">02 · SERVICES</div>
+    <h2 class="section-title">What I Lead</h2>
+    <p>End-to-end QA ownership for enterprise storage products — from firmware validation to release sign-off — backed by 15+ years of hands-on domain depth.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="num mono">01</div>
+      <h3>Storage &amp; Systems QA Leadership</h3>
+      <p>Leading and mentoring QA teams through full-cycle validation of enterprise storage platforms across array and host environments.</p>
+      <ul>
+        <li>SAN / NAS / FC / iSCSI Validation</li>
+        <li>Firmware &amp; Performance Testing</li>
+        <li>HA, Failover &amp; Scalability Testing</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="num mono">02</div>
+      <h3>Test Strategy &amp; Automation</h3>
+      <p>Owning STLC end-to-end — from test planning to defect lifecycle management — across Agile release cycles.</p>
+      <ul>
+        <li>Test Planning &amp; Release Validation</li>
+        <li>Defect Management &amp; RCA</li>
+        <li>Automated Regression Execution</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="num mono">03</div>
+      <h3>AI-Driven Test Automation</h3>
+      <p>Building toward intelligent, agent-assisted QA — combining domain expertise with modern automation frameworks.</p>
+      <ul>
+        <li>Python &amp; Playwright Automation</li>
+        <li>Agentic AI &amp; LangChain Workflows</li>
+        <li>RAG-Assisted Test Analysis</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="wrap reveal">
+  <div class="section-head">
+    <div class="section-tag">03 · STACK</div>
+    <h2 class="section-title">Tools &amp; Technologies</h2>
+  </div>
+  <div class="stack-cats">
+    <div class="stack-cat">
+      <h4>Storage</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><span class="letter">SAN</span>SAN</div>
+        <div class="stack-icon"><span class="letter">NAS</span>NAS</div>
+        <div class="stack-icon"><span class="letter">FC</span>FC</div>
+        <div class="stack-icon"><span class="letter">IS</span>iSCSI</div>
+        <div class="stack-icon"><span class="letter">RD</span>RAID</div>
+        <div class="stack-icon"><span class="letter">EC</span>Erasure Coding</div>
+        <div class="stack-icon"><span class="letter">HCI</span>HCI</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Virtualization</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/vmware/94A3B8" alt="">VMware ESXi</div>
+        <div class="stack-icon"><span class="letter">VC</span>vCenter</div>
+        <div class="stack-icon"><span class="letter">VCSA</span>vCSA</div>
+        <div class="stack-icon"><span class="letter">HV</span>Hyper-V</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Storage Validation</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><span class="letter">FW</span>Firmware Testing</div>
+        <div class="stack-icon"><span class="letter">FT</span>Feature Testing</div>
+        <div class="stack-icon"><span class="letter">PF</span>Performance Testing</div>
+        <div class="stack-icon"><span class="letter">ST</span>Stability Testing</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Testing</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><span class="letter">TP</span>Test Planning &amp; Strategy</div>
+        <div class="stack-icon"><span class="letter">FN</span>Functional Testing</div>
+        <div class="stack-icon"><span class="letter">RG</span>Regression Testing</div>
+        <div class="stack-icon"><span class="letter">RV</span>Release Validation</div>
+        <div class="stack-icon"><span class="letter">DM</span>Defect Management</div>
+        <div class="stack-icon"><span class="letter">RCA</span>Root Cause Analysis</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Automation</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><span class="letter">AT</span>Automation Test Execution</div>
+        <div class="stack-icon"><span class="letter">FA</span>Failure Analysis &amp; Triage</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/python/94A3B8" alt="">Python (Basic)</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4 style="color:var(--amber)">Server Platforms</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><span class="letter">DE</span>Dell</div>
+        <div class="stack-icon"><span class="letter">LN</span>Lenovo</div>
+        <div class="stack-icon"><span class="letter">SM</span>Supermicro</div>
+        <div class="stack-icon"><span class="letter">HP</span>HPE</div>
+        <div class="stack-icon"><span class="letter">FJ</span>Fujitsu</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Operating Systems</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/linux/94A3B8" alt="">Linux</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/windows/94A3B8" alt="">Windows</div>
+        <div class="stack-icon"><span class="letter">UX</span>HP-UX</div>
+        <div class="stack-icon"><span class="letter">SO</span>Solaris</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Tools &amp; DevOps</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><span class="letter">QC</span>QC / ALM</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/git/94A3B8" alt="">Git</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/github/94A3B8" alt="">GitHub</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/jenkins/94A3B8" alt="">Jenkins</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/jira/94A3B8" alt="">Jira</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/docker/94A3B8" alt="">Docker</div>
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/kubernetes/94A3B8" alt="">Kubernetes (Basic)</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>Cloud</h4>
+      <div class="stack-icons">
+        <div class="stack-icon"><img src="https://cdn.simpleicons.org/googlecloud/94A3B8" alt="">GCP (Basic)</div>
+      </div>
+    </div>
+    <div class="stack-cat">
+      <h4>⚡ Currently Learning</h4>
+      <div class="stack-icons">
+        <div class="stack-icon" style="border-color:var(--amber-dim); color:#7EEEDF;"><img src="https://cdn.simpleicons.org/playwright/2DD4BF" alt="">Playwright</div>
+        <div class="stack-icon" style="border-color:var(--amber-dim); color:#7EEEDF;"><img src="https://cdn.simpleicons.org/langchain/2DD4BF" alt="">LangChain</div>
+        <div class="stack-icon" style="border-color:var(--amber-dim); color:#7EEEDF;"><span class="letter">AI</span>AI Agents</div>
+        <div class="stack-icon" style="border-color:var(--amber-dim); color:#7EEEDF;"><span class="letter">AG</span>Agentic AI</div>
+        <div class="stack-icon" style="border-color:var(--amber-dim); color:#7EEEDF;"><span class="letter">RAG</span>RAG</div>
+        <div class="stack-icon" style="border-color:var(--amber-dim); color:#7EEEDF;"><span class="letter">LLM</span>LLM Apps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="wrap reveal">
+  <div class="section-head">
+    <div class="section-tag">04 · WORK</div>
+    <h2 class="section-title">Key Projects</h2>
+    <p>Flagship validation engagements across enterprise storage and hyperconverged infrastructure clients.</p>
+  </div>
+
+  <div class="work-group-title">Aziro Technologies</div>
+  <div class="work-grid">
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">01</div>
+      <h3>HPE StabilityOps</h3>
+      <div class="meta">Enterprise Storage Operating System · Aziro Technologies</div>
+      <div class="work-tags"><span>SAN</span><span>NAS</span><span>FC/iSCSI</span><span>VMware</span><span>Hyper-V</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Stability-tested major features from array and host-side perspectives.</li>
+          <li>Focused on data-path validation across OS and virtualization platforms.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">02</div>
+      <h3>Portworx — Anthos Certification</h3>
+      <div class="meta">Kubernetes Storage Certification · Aziro Technologies</div>
+      <div class="work-tags"><span>Kubernetes</span><span>CSI Driver</span><span>vSphere</span><span>Baremetal</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Achieved Anthos Ready storage partner certification via CSI driver validation.</li>
+          <li>Certified against Anthos vSphere &amp; Baremetal 1.13–1.15; led Daemonset → Operator migration validation.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">03</div>
+      <h3>PSO → Portworx Migration Tool</h3>
+      <div class="meta">Kubernetes Storage Migration · Aziro Technologies</div>
+      <div class="work-tags"><span>PSO</span><span>Portworx</span><span>PVs / PVCs</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Validated seamless migration of Kubernetes storage volumes, preserving data integrity and I/O continuity.</li>
+          <li>Developed test plans and strategy for comprehensive release validation.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">04</div>
+      <h3>Pivot3 Hyperconverged Infrastructure</h3>
+      <div class="meta">HCI Platform Qualification · Aziro Technologies</div>
+      <div class="work-tags"><span>Dell/Lenovo/Supermicro</span><span>Snapshots</span><span>HA</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Qualified Pivot3 vOS on Dell, Lenovo &amp; Supermicro running ESXi 6.5–7.0.</li>
+          <li>Validated Snapshots, Encryption, Replication, HA and failover; executed PXE/bare-metal deployments.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-group-title">HCL Technologies</div>
+  <div class="work-grid">
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">05</div>
+      <h3>Nutanix OS Qualification &amp; Validation</h3>
+      <div class="meta">Hyperconverged OS Qualification · HCL Technologies</div>
+      <div class="work-tags"><span>Solaris 11.3</span><span>ESXi 5.5/6.0</span><span>SOSAN</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Qualified Solaris 11.3 with SOSAN across client-side and storage-side testing.</li>
+          <li>Qualified VMware ESXi 5.5 / 6.0 with SOSAN on Dell, Lenovo, Supermicro and Fujitsu platforms.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-group-title">American MegaTrends India Pvt Ltd</div>
+  <div class="work-grid">
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">06</div>
+      <h3>StorTrends VWC Plugin</h3>
+      <div class="meta">VMware vCenter Storage Management · AMI</div>
+      <div class="work-tags"><span>SAN/NAS</span><span>FC/iSCSI</span><span>VMware ESXi</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Performed functional and regression testing for VMware vCenter storage management features.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">07</div>
+      <h3>iDATA</h3>
+      <div class="meta">Hybrid Server Performance Monitoring · AMI</div>
+      <div class="work-tags"><span>SAN/NAS</span><span>FC/iSCSI</span><span>VMware ESXi</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Validated a background monitoring tool generating performance reports with key metrics for hybrid servers.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work-card" onclick="toggleWork(this)">
+      <div class="num mono">08</div>
+      <h3>SnapTrends</h3>
+      <div class="meta">Application-Consistent Snapshots · AMI</div>
+      <div class="work-tags"><span>SAN/NAS</span><span>FC/iSCSI</span><span>VMware ESXi</span></div>
+      <div class="work-toggle">+ View details</div>
+      <div class="work-detail">
+        <ul>
+          <li>Verified snapshot scheduling, management, and monitoring functionalities.</li>
+          <li>Performed functional, regression, and reliability testing across supported environments.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials" class="wrap reveal">
+  <div class="section-head">
+    <div class="section-tag">05 · EDUCATION &amp; RECOGNITION</div>
+    <h2 class="section-title">Education &amp; Recognition</h2>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-col">
+      <h4>Education</h4>
+      <div class="cred-entry">
+        <div class="cred-icon">🎓</div>
+        <div>
+          <h5>B.Tech, Information Technology</h5>
+          <div class="sub">Anna University, Tamil Nadu · 2010</div>
+        </div>
+      </div>
+
+      <h4 style="margin-top:36px;">Highlights</h4>
+      <div class="cred-entry">
+        <div class="cred-icon">⭐</div>
+        <div>
+          <p>15+ years of sustained contribution across enterprise storage QA — SAN/NAS, Hyperconverged Infrastructure, and Kubernetes storage validation.</p>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">⭐</div>
+        <div>
+          <p>Trusted to lead root cause analysis and customer-escalation investigations across multiple flagship storage products (HPE, Portworx, Pivot3, Nutanix).</p>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">⭐</div>
+        <div>
+          <p>Actively expanding into AI-driven testing and automation — Python, Playwright, AI Agents, Agentic AI, LangChain, and RAG.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cred-col">
+      <h4>Awards &amp; Recognition</h4>
+      <div class="cred-entry">
+        <div class="cred-icon">🏆</div>
+        <div>
+          <h5>Rewards &amp; Recognition Nominee</h5>
+          <div class="sub">HPE Client · 2024, 2025, 2026 (4x nominations)</div>
+          <p>Recognized for leading the team, prioritizing high-severity issues, and resolving major configuration issues.</p>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">🏆</div>
+        <div>
+          <h5>She Rocks Award — Nakshatra Category</h5>
+          <div class="sub">Portworx Project · 2022</div>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">🏆</div>
+        <div>
+          <h5>Best Performer Award</h5>
+          <div class="sub">Pivot3 Project · 2020</div>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">🏆</div>
+        <div>
+          <h5>Outstanding Performance Award</h5>
+          <div class="sub">Nutanix Project · 2019</div>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">🏆</div>
+        <div>
+          <h5>Star Performer Award</h5>
+          <div class="sub">AMI StorTrends Project · 2015</div>
+        </div>
+      </div>
+      <div class="cred-entry">
+        <div class="cred-icon">🏆</div>
+        <div>
+          <h5>Team Performer Award</h5>
+          <div class="sub">AMI StorTrends Project · 2014</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap reveal" style="border-bottom:none;">
+  <div class="section-head">
+    <div class="section-tag">06 · CONTACT</div>
+    <h2 class="section-title">Let's Connect</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Open to Storage QA &amp; Automation opportunities</h3>
+      <p>Reach out for QA leadership roles, storage validation consulting, or a conversation on bringing agentic AI into test automation.</p>
+      <div class="contact-list">
+        <a href="mailto:skamarjothi@gmail.com"><span class="ic">✉</span>skamarjothi@gmail.com</a>
+        <a href="tel:+919940113739"><span class="ic">☎</span>+91 99401 13739</a>
+        <a href="https://linkedin.com/in/amarjothi-m-47a880146" target="_blank" rel="noopener"><span class="ic">in</span>linkedin.com/in/amarjothi-m</a>
+        <a href="https://github.com/amarjothim" target="_blank" rel="noopener"><span class="ic">⌥</span>github.com/amarjothim</a>
+        <a href="#"><span class="ic">⌖</span>Chennai, Tamil Nadu, India</a>
+      </div>
+    </div>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="return handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-row">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="justify-content:center;">Send Message</button>
+      <div class="form-note">Powered by Netlify Forms — works automatically once deployed on Netlify. No backend setup needed.</div>
+    </form>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© 2026 M. AmarJothi — Enterprise Storage QA Lead</div>
+  <div class="fsocials">
+    <a href="mailto:skamarjothi@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/amarjothi-m-47a880146" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/amarjothim" target="_blank" rel="noopener">GitHub</a>
+    <a href="#about">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.1});
+  revealEls.forEach(el => io.observe(el));
+
+  const navLinks = document.querySelectorAll('.navlinks a');
+  const sections = document.querySelectorAll('section[id]');
+  const navIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const link = document.querySelector(`.navlinks a[href="#${e.target.id}"]`);
+      if(!link) return;
+      if(e.isIntersecting){ navLinks.forEach(l=>l.classList.remove('active')); link.classList.add('active'); }
+    });
+  }, {threshold:0.35, rootMargin:'-90px 0px -40% 0px'});
+  sections.forEach(s => navIo.observe(s));
+
+  function toggleWork(card){
+    card.classList.toggle('open');
+    const t = card.querySelector('.work-toggle');
+    t.textContent = card.classList.contains('open') ? '− Hide details' : '+ View details';
+  }
+
+  function handleSubmit(e){
+    // Netlify handles submission automatically when deployed on Netlify.
+    // Locally / outside Netlify, fall back to mailto so the form still works.
+    if(!window.location.hostname.includes('netlify.app') && !window.location.hostname.includes('netlify.com')){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      window.location.href = `mailto:skamarjothi@gmail.com?subject=Portfolio contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + email)}`;
+    }
+    return true;
+  }
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navlinksEl = document.getElementById('navlinks');
+  menuBtn.addEventListener('click', () => {
+    const isShown = navlinksEl.style.display === 'flex';
+    navlinksEl.style.cssText = isShown ? '' : 'display:flex; position:absolute; top:64px; left:0; right:0; background:#14171B; flex-direction:column; padding:12px 32px; border-bottom:1px solid #262B31; gap:2px;';
+  });
+</script>
+
+</body>
+</html>
